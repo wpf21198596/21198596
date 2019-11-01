@@ -4,6 +4,7 @@ import com.fh.shop.api.product.mapper.IProductMapper;
 import com.fh.shop.api.product.po.Shop;
 import com.fh.shop.api.utils.emailUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -16,6 +17,9 @@ public class SendEmailTimmer {
 
     @Autowired
     private IProductMapper productMapper;
+
+    @Value("${}")
+    private String people;
 
     @Scheduled(fixedRate = 30000)
     public void sendEmain() throws MessagingException {
