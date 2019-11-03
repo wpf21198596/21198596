@@ -9,7 +9,7 @@ import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
 public class emailUtil {
-    public static void sendEmail(String title,String content) throws MessagingException {
+    public static void sendEmail(String title,String content,String people) throws MessagingException {
         Properties properties = new Properties();
         properties.put("mail.transport.protocol", "smtp");// 连接协议
         properties.put("mail.smtp.host", "smtp.qq.com");// 主机名
@@ -25,8 +25,9 @@ public class emailUtil {
         message.setFrom(new InternetAddress("470599110@qq.com"));
         // 设置收件人邮箱地址
         //message.setRecipients(Message.RecipientType.TO, new InternetAddress[]{new InternetAddress("xxx@qq.com"),new InternetAddress("xxx@qq.com"),new InternetAddress("xxx@qq.com")});
-        message.setRecipient(Message.RecipientType.TO, new InternetAddress("532028476@qq.com"));//一个收件人
+        //message.setRecipient(Message.RecipientType.TO, new InternetAddress("532028476@qq.com"));//一个收件人
         //message.setRecipient(Message.RecipientType.TO, new InternetAddress("1181291657@qq.com"));//一个收件人
+        message.setRecipient(Message.RecipientType.TO, new InternetAddress(people));//一个收件人
         // 设置邮件标题
         message.setSubject(title);
         // 设置邮件内容

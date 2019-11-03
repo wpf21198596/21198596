@@ -8,7 +8,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 import javax.servlet.annotation.WebListener;
 
-/*//@EnableScheduling//启动定时器。发现注解*/
+@EnableScheduling//启动定时器。发现注解
 @SpringBootApplication
 @MapperScan("com.fh.shop.api.*.mapper")
 public class ShopApiSpringbootApplication {
